@@ -27,9 +27,7 @@ def _secret(key: str, section: str = 'supabase') -> str:
 
 
 SUPABASE_URL = _secret('SUPABASE_URL')
-logger.info(f'SUPABASE_URL={SUPABASE_URL}')
 SUPABASE_ANON_KEY = _secret('SUPABASE_ANON_KEY')
-logger.info(f'SUPABASE_ANON_KEY={"set" if SUPABASE_ANON_KEY else "not set"}')
 OAUTH_REDIRECT_URL = (
     os.getenv('AUTH_REDIRECT_URL')
     or _secret('redirect_uri', 'google_oauth')
